@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Happy Birthday</title>
-
-<!-- FONT -->
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -96,18 +93,7 @@ background:url("images/bg") no-repeat center center/cover;
 position:relative;
 width:900px;
 height:600px;
-}
-
-/* Title */
-
-.title{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:72px;
-color:white;
-text-shadow:0 10px 25px rgba(0,0,0,.55);
+transform-origin:center;
 }
 
 /* Polaroid */
@@ -160,9 +146,25 @@ animation:fall linear forwards;
 100%{transform:translateY(110vh) rotate(720deg);}
 }
 
+/* ---------------- RESPONSIVE FIX ---------------- */
+
+@media (max-width:900px){
+.container{transform:scale(.8);}
+}
+
+@media (max-width:700px){
+.container{transform:scale(.65);}
+}
+
+@media (max-width:500px){
+.container{transform:scale(.5);}
+}
+
+@media (max-width:380px){
+.container{transform:scale(.42);}
+}
 
 </style>
-
 </head>
 
 <body>
@@ -308,6 +310,7 @@ document.addEventListener("touchstart",startMusic,{once:true});
 
 </body>
 </html>
+
 
 
 
