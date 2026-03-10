@@ -25,6 +25,7 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+z-index:1;
 }
 
 /* ---------- PAGE 1 ---------- */
@@ -94,6 +95,19 @@ position:relative;
 width:900px;
 height:600px;
 transform-origin:center;
+}
+
+/* Birthday Title */
+
+.title{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:72px;
+color:white;
+text-shadow:0 10px 25px rgba(0,0,0,.6);
+font-weight:600;
 }
 
 /* Polaroid */
@@ -186,11 +200,11 @@ animation:fall linear forwards;
 <!-- PAGE 2 -->
 
 <div class="page" id="page2">
-  
+
 <div class="container">
-  
-<h1 class="title">Happy Birthday 🎂</h1>
-  
+
+<h1 class="title">Happy Birthday 🎂</h1> <br>
+
 <div class="polaroid p1">
 <img src="images/paru 1.jpeg">
 </div>
@@ -227,6 +241,9 @@ function explodeHeart(){
 
 const heart=document.querySelector(".heart");
 const rect=heart.getBoundingClientRect();
+
+/* start music */
+document.getElementById("bgMusic").play();
 
 for(let i=0;i<25;i++){
 
@@ -297,26 +314,7 @@ setTimeout(()=>ribbon.remove(),6000);
 
 }
 
-/* MUSIC START AFTER TOUCH */
-
-const music=document.getElementById("bgMusic");
-
-function startMusic(){
-music.play();
-}
-
-document.addEventListener("click",startMusic,{once:true});
-document.addEventListener("touchstart",startMusic,{once:true});
-
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
